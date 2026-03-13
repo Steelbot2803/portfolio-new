@@ -1,0 +1,39 @@
+---
+interface Props {
+  name: string;
+  resumeUrl: string;
+}
+
+const { name, resumeUrl } = Astro.props;
+---
+
+<header class="sticky top-0 z-20 border-b border-brand-panel-border/80 bg-brand-panel/85 backdrop-blur">
+  <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+    <a class="text-lg font-semibold tracking-tight text-brand-text" href="#top">{name}</a>
+
+    <nav class="flex flex-wrap items-center gap-4 text-sm text-brand-muted">
+      <a href="#about" class="transition hover:text-brand-text">About</a>
+      <a href="#experience" class="transition hover:text-brand-text">Experience</a>
+      <a href="#projects" class="transition hover:text-brand-text">Projects</a>
+      <a href="#skills" class="transition hover:text-brand-text">Skills</a>
+      <a href="#contact" class="transition hover:text-brand-text">Contact</a>
+
+      <button
+        type="button"
+        data-theme-toggle
+        class="rounded-full border border-brand-panel-border px-3 py-1.5 font-medium text-brand-muted transition hover:bg-brand-bg/60 hover:text-brand-text"
+      >
+        <span data-theme-label>Light mode</span>
+      </button>
+
+      <a
+        class="rounded-full border border-brand-accent/60 px-3 py-1.5 font-medium text-brand-accent-contrast transition hover:bg-brand-accent/15"
+        href={resumeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Resume
+      </a>
+    </nav>
+  </div>
+</header>

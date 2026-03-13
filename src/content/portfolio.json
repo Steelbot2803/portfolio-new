@@ -1,0 +1,77 @@
+{
+  "seo": {
+    "siteName": "Your Name | Portfolio",
+    "defaultTitle": "Your Name — Product-Focused Software Engineer",
+    "defaultDescription": "Portfolio featuring experience, projects, skills, and contact information for Your Name.",
+    "canonicalBase": "https://your-domain.com",
+    "ogImage": "/og-cover.svg"
+  },
+  "profile": {
+    "name": "Your Name",
+    "role": "Product-Focused Software Engineer",
+    "location": "City, Country",
+    "tagline": "I build reliable web experiences with clean UX, measurable outcomes, and scalable architecture.",
+    "shortBio": "I design and ship full-stack products across frontend, backend, and cloud workflows. I care about performance, usability, and business impact.",
+    "email": "you@example.com",
+    "phone": "+1 000-000-0000",
+    "linkedin": "https://www.linkedin.com/in/your-profile",
+    "github": "https://github.com/your-handle",
+    "resumeUrl": "https://example.com/resume.pdf"
+  },
+  "stats": [
+    { "label": "Years of Experience", "value": "5+" },
+    { "label": "Projects Delivered", "value": "20+" },
+    { "label": "Domains Worked In", "value": "6" }
+  ],
+  "about": {
+    "heading": "About Me",
+    "paragraphs": [
+      "I enjoy turning ambiguous problems into products users actually adopt. My approach combines user empathy, clear technical architecture, and fast iteration.",
+      "I collaborate closely with stakeholders, convert goals into milestones, and keep delivery quality high through testing, observability, and documentation."
+    ]
+  },
+  "experience": [
+    {
+      "company": "Company Name",
+      "role": "Senior Software Engineer",
+      "period": "2022 — Present",
+      "bullets": [
+        "Led development of customer-facing features that improved conversion and retention.",
+        "Reduced release risk by introducing stronger CI checks and staged deployments.",
+        "Mentored engineers and improved team velocity through reusable component patterns."
+      ]
+    },
+    {
+      "company": "Previous Company",
+      "role": "Software Engineer",
+      "period": "2019 — 2022",
+      "bullets": [
+        "Built internal tooling that automated manual operations and reduced turnaround time.",
+        "Shipped API and UI enhancements that improved task completion rates."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "description": "A web platform that streamlined team workflows with real-time dashboards and notifications.",
+      "stack": ["Astro", "TypeScript", "Node.js"],
+      "link": "https://example.com/project-alpha"
+    },
+    {
+      "title": "Project Beta",
+      "description": "A data-rich application with robust search, filters, and analytics for decision-making.",
+      "stack": ["React", "PostgreSQL", "Docker"],
+      "link": "https://example.com/project-beta"
+    }
+  ],
+  "skills": {
+    "core": ["JavaScript/TypeScript", "React", "Astro", "Node.js", "REST APIs", "SQL"],
+    "tools": ["GitHub Actions", "Docker", "AWS", "Figma", "Jira"]
+  },
+  "contact": {
+    "heading": "Get Back to Me",
+    "description": "Tell me about your need and share your contact details. I will follow up as soon as possible.",
+    "privacyNote": "Your details are used only to reply to your inquiry and are never shared with third parties."
+  }
+}
