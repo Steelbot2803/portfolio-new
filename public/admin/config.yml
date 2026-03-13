@@ -1,0 +1,95 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: portfolio
+    label: Portfolio Content
+    files:
+      - label: Portfolio Data
+        name: portfolio-data
+        file: src/content/portfolio.json
+        format: json
+        fields:
+          - label: SEO
+            name: seo
+            widget: object
+            fields:
+              - { label: Site Name, name: siteName, widget: string }
+              - { label: Default Title, name: defaultTitle, widget: string }
+              - { label: Default Description, name: defaultDescription, widget: text }
+              - { label: Canonical Base, name: canonicalBase, widget: string }
+              - { label: OG Image, name: ogImage, widget: string }
+          - label: Profile
+            name: profile
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Tagline, name: tagline, widget: text }
+              - { label: Short Bio, name: shortBio, widget: text }
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string }
+              - { label: LinkedIn URL, name: linkedin, widget: string }
+              - { label: GitHub URL, name: github, widget: string }
+              - { label: Resume URL, name: resumeUrl, widget: string }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Value, name: value, widget: string }
+          - label: About
+            name: about
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - label: Experience
+            name: experience
+            widget: list
+            fields:
+              - { label: Company, name: company, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Period, name: period, widget: string }
+              - label: Bullets
+                name: bullets
+                widget: list
+                field: { label: Bullet, name: bullet, widget: string }
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Stack
+                name: stack
+                widget: list
+                field: { label: Tech, name: tech, widget: string }
+              - { label: Link, name: link, widget: string }
+          - label: Skills
+            name: skills
+            widget: object
+            fields:
+              - label: Core Skills
+                name: core
+                widget: list
+                field: { label: Skill, name: skill, widget: string }
+              - label: Tools
+                name: tools
+                widget: list
+                field: { label: Tool, name: tool, widget: string }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Privacy Note, name: privacyNote, widget: text }

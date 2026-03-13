@@ -1,11 +1,87 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/sections/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import InfoSection from '../components/sections/InfoSection.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import siteContent from '../content/portfolio.json';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const canonicalUrl = new URL('/', siteContent.seo.canonicalBase).toString();
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title={siteContent.seo.defaultTitle}
+  description={siteContent.seo.defaultDescription}
+  canonicalUrl={canonicalUrl}
+  siteName={siteContent.seo.siteName}
+  ogImage={siteContent.seo.ogImage}
+>
+  <Header name={siteContent.profile.name} resumeUrl={siteContent.profile.resumeUrl} />
+
+  <main>
+    <Hero profile={siteContent.profile} stats={siteContent.stats} />
+
+    <InfoSection id="about" title={siteContent.about.heading}>
+      <div class="space-y-3 text-brand-muted leading-7">
+        {siteContent.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </InfoSection>
+
+    <InfoSection id="experience" title="Experience">
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          siteContent.experience.map((job) => (
+            <article class="rounded-xl border border-brand-panel-border bg-brand-panel p-4">
+              <h4 class="text-lg font-semibold text-brand-text">{job.role}</h4>
+              <p class="mt-1 text-sm text-brand-muted">
+                {job.company} · {job.period}
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-5 text-brand-muted">
+                {job.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </InfoSection>
+
+    <InfoSection id="projects" title="Selected Projects">
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          siteContent.projects.map((project) => (
+            <article class="rounded-xl border border-brand-panel-border bg-brand-panel p-4">
+              <h4 class="text-lg font-semibold text-brand-text">{project.title}</h4>
+              <p class="mt-2 text-brand-muted">{project.description}</p>
+              <p class="mt-2 text-sm text-brand-muted">{project.stack.join(' · ')}</p>
+              <a
+                class="mt-3 inline-block text-sm font-medium text-brand-link hover:brightness-110"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View project
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </InfoSection>
+
+    <InfoSection id="skills" title="Skills & Tools">
+      <div class="space-y-2 text-brand-muted">
+        <p>
+          <strong class="text-brand-text">Core:</strong> {siteContent.skills.core.join(', ')}
+        </p>
+        <p>
+          <strong class="text-brand-text">Tools:</strong> {siteContent.skills.tools.join(', ')}
+        </p>
+      </div>
+    </InfoSection>
+
+    <ContactForm
+      heading={siteContent.contact.heading}
+      description={siteContent.contact.description}
+      privacyNote={siteContent.contact.privacyNote}
+    />
+  </main>
 </Layout>
