@@ -1,73 +1,138 @@
 {
   "seo": {
-    "siteName": "Your Name | Portfolio",
-    "defaultTitle": "Your Name — Product-Focused Software Engineer",
-    "defaultDescription": "Portfolio featuring experience, projects, skills, and contact information for Your Name.",
+    "siteName": "Siddharth Kumar | Portfolio",
+    "defaultTitle": "Siddharth Kumar — Engineer",
+    "defaultDescription": "Portfolio featuring experience, projects, skills, and contact information for Siddharth Kumar.",
     "canonicalBase": "https://your-domain.com",
     "ogImage": "/og-cover.svg"
   },
   "profile": {
-    "name": "Your Name",
-    "role": "Product-Focused Software Engineer",
-    "location": "City, Country",
-    "tagline": "I build reliable web experiences with clean UX, measurable outcomes, and scalable architecture.",
-    "shortBio": "I design and ship full-stack products across frontend, backend, and cloud workflows. I care about performance, usability, and business impact.",
-    "email": "you@example.com",
-    "phone": "+1 000-000-0000",
-    "linkedin": "https://www.linkedin.com/in/your-profile",
-    "github": "https://github.com/your-handle",
-    "resumeUrl": "https://example.com/resume.pdf"
+    "name": "Siddharth Kumar",
+    "role": "Engineer",
+    "location": "Bengaluru, India",
+    "tagline": "Engineering manufacturable systems from concept to production.",
+    "shortBio": "Engineer focused on designing manufacturable products and optimizing production systems. Combines CAD, simulation, and hands-on manufacturing expertise to transform concepts into scalable solutions.",
+    "email": "sid42@outlook.com",
+    "phone": "+91 93533 68952",
+    "linkedin": "https://www.linkedin.com/in/sidkak",
+    "github": "https://github.com/Steelbot2803",
+    "resumeUrl": "../src/components/files/resume.pdf"
   },
   "stats": [
-    { "label": "Years of Experience", "value": "5+" },
-    { "label": "Projects Delivered", "value": "20+" },
-    { "label": "Domains Worked In", "value": "6" }
+    { "label": "Years of Experience", "value": "3+" },
+    { "label": "Projects Delivered", "value": "9" },
+    { "label": "Domains Worked In", "value": "3" }
   ],
   "about": {
     "heading": "About Me",
     "paragraphs": [
-      "I enjoy turning ambiguous problems into products users actually adopt. My approach combines user empathy, clear technical architecture, and fast iteration.",
-      "I collaborate closely with stakeholders, convert goals into milestones, and keep delivery quality high through testing, observability, and documentation."
+      "I am a engineer focused on designing and delivering practical, manufacturable engineering solutions. My work sits at the intersection of design, simulation, and production engineering, where I translate ideas into systems that can be reliably built and scaled. I enjoy tackling complex engineering challenges; from developing CAD models and performing structural simulations to optimizing CNC processes and improving shop-floor workflows. At IPA Private Limited, I have worked on initiatives that significantly increased manufacturing output, improved calibration accuracy, and enhanced production efficiency through fixture design, tool-path optimization, and data-driven process improvements.",
+      "My background includes an M.S. in Engineering from the University of Texas at Dallas and a B.Tech from VIT Vellore, which shaped my interest in combining analytical engineering methods with hands-on problem solving. I am particularly interested in product development, advanced manufacturing, robotics, and intelligent systems, where thoughtful design and engineering rigor can turn complex ideas into reliable real-world products."
     ]
   },
   "experience": [
     {
-      "company": "Company Name",
-      "role": "Senior Software Engineer",
-      "period": "2022 — Present",
+      "company": "IPA Private Limited",
+      "role": "Engineer",
+      "period": "Sep 2025 — Present",
       "bullets": [
-        "Led development of customer-facing features that improved conversion and retention.",
-        "Reduced release risk by introducing stronger CI checks and staged deployments.",
-        "Mentored engineers and improved team velocity through reusable component patterns."
+        "Perform CAD and CAM work supporting critical part modeling, fixture design, DFM reviews, and CNC tool-path optimization.",
+        "Act as the primary technical interface for manufacturing issues, design changes, and process improvements related to transducer systems.",
+        "Evaluate machining processes and inspection practices during supplier visits, verifying adherence to engineering drawings and GD&T requirements.",
+        "Support continuous improvement initiatives to improve manufacturability, production reliability, and process efficiency.",
+        "Lead the continued development and decentralization of the machine shop to enable scalable manufacturing operations.",
+        "Manage vendor sourcing, RFQ evaluation, technical capability assessment, and supplier selection.",
+        "Conduct price negotiations with machining, tooling, and fabrication vendors while balancing cost, quality, and delivery requirements.",
+        "Coordinate day-to-day operations of the transducer production line, including work-order prioritization and cross-functional alignment with quality and procurement teams.",
+        "Support organizational quality systems as a Certified ISO Internal Auditor, assisting with internal audits, compliance reviews, and corrective actions."
       ]
     },
     {
-      "company": "Previous Company",
-      "role": "Software Engineer",
-      "period": "2019 — 2022",
+      "company": "IPA Private Limited",
+      "role": "Junior Engineer",
+      "period": "May 2025 — Sep 2025",
       "bullets": [
-        "Built internal tooling that automated manual operations and reduced turnaround time.",
-        "Shipped API and UI enhancements that improved task completion rates."
+        "Collaborated with CAM specialists to redesign CNC toolpaths, reducing cycle time by 50% and increasing projected monthly output from 500 to 1,500 parts.",
+        "Validated CNC programs directly on the shop floor, documenting setup sheets, tooling parameters, and machining conditions to ensure production readiness.",
+        "Developed a data-driven production dashboard in Excel to track machine runtime, downtime, tool life, and output metrics, enabling data-informed engineering decisions.",
+        "Conducted capability assessments for 12 machine shop operators, mapping skill levels to job requirements.",
+        "Rebalanced task assignments to align operator expertise with setup complexity, increasing shop throughput by 15%.",
+        "Led a cross-functional initiative with technicians and an external consultant to redesign the machine shop management framework."
+      ]
+    },
+    {
+      "company": "IPA Private Limited",
+      "role": "Engineering Intern",
+      "period": "Mar 2025 — Apr 2025",
+      "bullets": [
+        "Calibrated a Universal Testing Machine (UTM) using staged dead-weight loading to validate load cell performance across multiple load conditions.",
+        "Identified load distribution discrepancies and proposed structural design modifications that improved calibration accuracy by 15%.",
+        "Designed custom jigs and structural supports to improve testing efficiency by 25% and increase laser engraving throughput by 50%."
+      ]
+    },
+    {
+      "company": "JerseySTEM",
+      "role": "Lead Curriculum Dev — Robotics",
+      "period": "May 2024 — Jan 2025",
+      "bullets": [
+        "Led the development of a comprehensive robotics curriculum for middle school students, covering topics from basic mechanics to advanced programming.",
+        "Designed hands-on projects and activities using LEGO Robotics that engaged students in building and programming their own robots, fostering creativity and problem-solving skills."
+      ]
+    },
+    {
+      "company": "Anemoi Technologies",
+      "role": "Mechancial Design Engineer",
+      "period": "Jan 2019 — Jan 2020",
+      "bullets": [
+        "Designed and developed a package mounting system using SolidWorks and Fusion 360, achieving a 15% reduction in material usage and 25% increase in load capacity.",
+        "Conducted FEA and structural analysis with ANSYS, improving prototype durability by 20%.",
+        "Reduced design-to-prototype lead time by 30% through modular design implementation."
       ]
     }
   ],
   "projects": [
     {
-      "title": "Project Alpha",
-      "description": "A web platform that streamlined team workflows with real-time dashboards and notifications.",
-      "stack": ["Astro", "TypeScript", "Node.js"],
-      "link": "https://example.com/project-alpha"
+      "title": "Transducer Database",
+      "description": "A custom built internal database designed and developed to track all loadcells that go through Transducer Dept.",
+      "stack": ["SvelteKit", "PostgreSQL"],
+      "link": "https://github.com/Steelbot2803/IPA-Database"
     },
     {
-      "title": "Project Beta",
-      "description": "A data-rich application with robust search, filters, and analytics for decision-making.",
-      "stack": ["React", "PostgreSQL", "Docker"],
-      "link": "https://example.com/project-beta"
+      "title": "Water Level Automation",
+      "description": "A water level monitoring and control system with a robust app implemented at home.",
+      "stack": ["SvelteKit", "MQTT"],
+      "link": "https://github.com/Steelbot2803/water_level_automation"
     }
   ],
   "skills": {
-    "core": ["JavaScript/TypeScript", "React", "Astro", "Node.js", "REST APIs", "SQL"],
-    "tools": ["GitHub Actions", "Docker", "AWS", "Figma", "Jira"]
+    "core": [
+      "Computer Aided Design",
+      "Finite Element Ananlysis",
+      "Computer Aided Manufacturing",
+      "CNC Tool-path Optimization",
+      "DFM/DFA",
+      "Critical Thinking",
+      "Problem Solving",
+      "Project Management",
+      "Cross-functional Collaboration",
+      "Manufacturing Process Optimization",
+      "Vendor Management",
+      "ISO Internal Auditing",
+      "Data-Driven Decision Making",
+      "Technical Communication"
+    ],
+    "tools": [
+      "Autodesk Fusion",
+      "AutoCAD",
+      "Autodesk Inventor",
+      "SOLIDWORKS",
+      "ANSYS",
+      "Microsoft Office",
+      "Git/GitHUB",
+      "SvelteKit",
+      "PostgreSQL",
+      "MQTT"
+    ]
   },
   "contact": {
     "heading": "Get Back to Me",

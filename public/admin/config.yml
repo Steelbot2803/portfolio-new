@@ -20,7 +20,11 @@ collections:
             fields:
               - { label: Site Name, name: siteName, widget: string }
               - { label: Default Title, name: defaultTitle, widget: string }
-              - { label: Default Description, name: defaultDescription, widget: text }
+              - {
+                  label: Default Description,
+                  name: defaultDescription,
+                  widget: text,
+                }
               - { label: Canonical Base, name: canonicalBase, widget: string }
               - { label: OG Image, name: ogImage, widget: string }
           - label: Profile

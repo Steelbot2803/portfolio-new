@@ -1,4 +1,6 @@
 ---
+import { Clock3, Mail, MessageSquare, Phone, Send, User } from "@lucide/astro";
+
 interface Props {
   heading: string;
   description: string;
@@ -9,72 +11,132 @@ const { heading, description, privacyNote } = Astro.props;
 ---
 
 <section id="contact" class="mx-auto w-full max-w-6xl px-5 py-8 pb-16">
-  <h3 class="text-2xl font-semibold tracking-tight text-brand-text">{heading}</h3>
+  <h3 class="text-2xl font-semibold tracking-tight text-brand-text">
+    {heading}
+  </h3>
   <p class="mt-3 max-w-3xl leading-7 text-brand-muted">{description}</p>
-  <form id="contactForm" class="mt-6 grid max-w-2xl gap-3">
-    <input name="company" autocomplete="off" tabindex="-1" aria-hidden="true" class="hidden" />
+  <form
+    id="contactForm"
+    class="mt-6 grid max-w-2xl gap-3 rounded-2xl border border-brand-panel-border bg-brand-panel/90 p-5 shadow-sm"
+  >
+    <input
+      name="company"
+      autocomplete="off"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden"
+    />
 
     <label class="grid gap-1 text-sm text-brand-text/90">
-      Full Name
-      <input required name="name" class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text" />
+      <span class="inline-flex items-center gap-2">
+        <User size={20} />
+        Full Name*
+      </span>
+      <input
+        required
+        name="name"
+        class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
+      />
     </label>
 
     <label class="grid gap-1 text-sm text-brand-text/90">
-      Email
-      <input required type="email" name="email" class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text" />
+      <span class="inline-flex items-center gap-2">
+        <Mail size={20} />
+        Email*
+      </span>
+      <input
+        required
+        type="email"
+        name="email"
+        class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
+      />
     </label>
 
     <label class="grid gap-1 text-sm text-brand-text/90">
-      Phone
-      <input required name="phone" class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text" />
+      <span class="inline-flex items-center gap-2">
+        <Phone size={20} />
+        Phone
+      </span>
+      <input
+        name="phone"
+        class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
+      />
     </label>
 
     <label class="grid gap-1 text-sm text-brand-text/90">
-      Preferred callback window
-      <input name="callbackWindow" placeholder="e.g. Weekdays 6-8 PM" class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/70" />
+      <span class="inline-flex items-center gap-2">
+        <Clock3 size={20} />
+        Preferred callback window
+      </span>
+      <input
+        name="callbackWindow"
+        placeholder="e.g. Weekdays 6-8 PM"
+        class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
+      />
     </label>
 
     <label class="grid gap-1 text-sm text-brand-text/90">
-      Message
-      <textarea required name="message" rows="5" class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text"></textarea>
+      <span class="inline-flex items-center gap-2">
+        <MessageSquare size={20} />
+        Message*
+      </span>
+      <textarea
+        required
+        name="message"
+        rows="5"
+        class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
+      ></textarea>
     </label>
 
-    <button type="submit" class="mt-2 w-fit rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-brand-text hover:brightness-110">Send Details</button>
-    <p id="contactStatus" role="status" class="text-sm text-brand-muted"></p>
+    <button
+      type="submit"
+      class="mt-2 inline-flex w-fit items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-brand-accent-contrast shadow-sm hover:brightness-110"
+    >
+      <Send size={20} />
+      Send Details
+    </button>
+    <p
+      id="contactStatus"
+      role="status"
+      class="text-sm font-medium text-brand-muted"
+    >
+    </p>
   </form>
   <p class="mt-3 text-sm text-brand-muted">{privacyNote}</p>
 </section>
 
 <script>
-  const form = document.querySelector('#contactForm');
-  const status = document.querySelector('#contactStatus');
+  const form = document.querySelector<HTMLFormElement>("#contactForm");
+  const status = document.querySelector<HTMLParagraphElement>("#contactStatus");
 
-  form?.addEventListener('submit', async (event) => {
+  form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
-    if (!payload.name || !payload.email || !payload.phone || !payload.message) {
-      if (status) status.textContent = 'Please fill in all required fields.';
+    if (!payload.name || !payload.email || !payload.message) {
+      if (status) status.textContent = "Please fill in all required fields.";
       return;
     }
 
     try {
-      if (status) status.textContent = 'Sending...';
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      if (status) status.textContent = "Sending...";
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        throw new Error('Submission failed');
+        throw new Error("Submission failed");
       }
 
       form.reset();
-      if (status) status.textContent = 'Thanks! I will get back to you soon.';
+      if (status) status.textContent = "Thanks! I will get back to you soon.";
     } catch {
-      if (status) status.textContent = 'Could not submit right now. Please email me directly.';
+      if (status)
+        status.textContent =
+          "Could not submit right now. Please email me directly.";
     }
   });
 </script>

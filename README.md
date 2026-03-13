@@ -1,6 +1,7 @@
 # Portfolio Website (Astro)
 
 This project is a portfolio site with:
+
 - Tailwind CSS utility-first styling for fast visual iteration.
 - Dark/light mode toggle with system preference + localStorage persistence.
 - Structured resume-style sections (hero, about, experience, projects, skills).
@@ -30,6 +31,7 @@ You can edit this file directly, or use the admin UI:
 This repo includes Decap CMS config in `public/admin/config.yml`.
 
 To enforce owner-only editing in production:
+
 1. Deploy on Netlify.
 2. Enable **Netlify Identity** and **Git Gateway**.
 3. Disable open signup and invite only your own account.
@@ -43,6 +45,7 @@ The form posts to:
 - `src/pages/api/contact.ts`
 
 Features:
+
 - Required field validation (`name`, `email`, `phone`, `message`).
 - Email format validation.
 - Honeypot (`company`) anti-spam field.
@@ -61,6 +64,7 @@ The endpoint will forward sanitized submission payloads to your webhook.
 ## 4) Resume and profile links
 
 Update these in `src/content/portfolio.json`:
+
 - `profile.linkedin`
 - `profile.github`
 - `profile.resumeUrl`
@@ -68,13 +72,13 @@ Update these in `src/content/portfolio.json`:
 ## 5) SEO & social metadata
 
 `src/layouts/Layout.astro` includes:
+
 - Meta description
 - Canonical URL
 - Open Graph tags
 - Twitter summary tags
 
 Update defaults in `src/content/portfolio.json` under `seo`.
-
 
 ## 6) Theme mode
 

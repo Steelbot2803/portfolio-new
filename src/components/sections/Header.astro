@@ -1,4 +1,6 @@
 ---
+import { Download, Menu, Moon, Sun, X } from "@lucide/astro";
+
 interface Props {
   name: string;
   resumeUrl: string;
@@ -7,33 +9,192 @@ interface Props {
 const { name, resumeUrl } = Astro.props;
 ---
 
-<header class="sticky top-0 z-20 border-b border-brand-panel-border/80 bg-brand-panel/85 backdrop-blur">
-  <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
-    <a class="text-lg font-semibold tracking-tight text-brand-text" href="#top">{name}</a>
+<header
+  class="fixed inset-x-0 top-0 z-40 border-b border-brand-panel-border/80 bg-brand-panel/95 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur supports-[backdrop-filter]:bg-brand-panel/82"
+>
+  <div
+    class="mx-auto flex min-h-[5.5rem] w-full max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3 md:min-h-[4.75rem] md:flex-nowrap md:py-4"
+  >
+    <a class="text-lg font-semibold tracking-tight text-brand-text" href="#top"
+      >{name} | Portfolio</a
+    >
+    <button
+      type="button"
+      data-mobile-nav-toggle
+      aria-expanded="false"
+      aria-controls="mobileNavPanel"
+      class="relative inline-flex size-10 items-center justify-end rounded-full text-sm font-medium text-brand-text transition-colors hover:bg-brand-bg/70 md:hidden"
+    >
+      <Menu
+        size={20}
+        class="absolute transition-all duration-200 ease-out"
+        data-menu-icon="open"
+      />
+      <X
+        size={20}
+        class="absolute rotate-90 opacity-0 transition-all duration-200 ease-out"
+        data-menu-icon="close"
+      />
+    </button>
 
-    <nav class="flex flex-wrap items-center gap-4 text-sm text-brand-muted">
-      <a href="#about" class="transition hover:text-brand-text">About</a>
-      <a href="#experience" class="transition hover:text-brand-text">Experience</a>
-      <a href="#projects" class="transition hover:text-brand-text">Projects</a>
-      <a href="#skills" class="transition hover:text-brand-text">Skills</a>
-      <a href="#contact" class="transition hover:text-brand-text">Contact</a>
+    <nav
+      class="hidden flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted md:flex md:justify-end"
+    >
+      <a href="#about" class="font-medium hover:text-brand-text">About</a>
+      <a href="#experience" class="font-medium hover:text-brand-text"
+        >Experience</a
+      >
+      <a href="#projects" class="font-medium hover:text-brand-text">Projects</a>
+      <a href="#skills" class="font-medium hover:text-brand-text">Skills</a>
+      <a href="#contact" class="font-medium hover:text-brand-text">Contact</a>
 
       <button
         type="button"
         data-theme-toggle
-        class="rounded-full border border-brand-panel-border px-3 py-1.5 font-medium text-brand-muted transition hover:bg-brand-bg/60 hover:text-brand-text"
+        class="inline-flex items-center gap-2 rounded-full border border-brand-panel-border bg-brand-panel px-1.5 py-1.5 font-medium text-brand-text shadow-sm hover:border-brand-link/35 hover:bg-brand-bg"
       >
-        <span data-theme-label>Light mode</span>
+        <Sun size={20} data-theme-icon="sun" />
+        <Moon size={20} class="hidden" data-theme-icon="moon" />
       </button>
 
       <a
-        class="rounded-full border border-brand-accent/60 px-3 py-1.5 font-medium text-brand-accent-contrast transition hover:bg-brand-accent/15"
+        class="inline-flex items-center gap-2 rounded-full border border-brand-accent bg-brand-accent px-3 py-1.5 font-medium text-brand-accent-contrast shadow-sm hover:brightness-110"
         href={resumeUrl}
         target="_blank"
         rel="noopener noreferrer"
       >
+        <Download size={20} />
         Resume
       </a>
     </nav>
   </div>
+
+  <div
+    data-mobile-nav-shell
+    aria-hidden="true"
+    class="pointer-events-none invisible fixed inset-x-0 top-[5.5rem] z-50 md:hidden"
+  >
+    <div
+      data-mobile-nav-overlay
+      class="absolute inset-0 bg-brand-panel/95 opacity-0 transition-opacity duration-200"
+    >
+    </div>
+
+    <aside
+      id="mobileNavPanel"
+      data-mobile-nav-panel
+      class="pointer-events-auto absolute right-0 top-0 isolate flex max-w-full -translate-y-4 flex-col overflow-hidden border-b border-brand-panel-border bg-brand-panel opacity-0 transition-all duration-200 ease-out will-change-transform"
+    >
+      <div
+        class="relative z-10 flex h-full flex-col overflow-y-auto bg-brand-panel"
+      >
+        <nav
+          class="flex flex-col border-t border-brand-panel-border px-5 pb-6 pt-4 text-base text-brand-muted"
+        >
+          <a
+            href="#about"
+            class="rounded-lg px-2 py-3 font-medium transition-colors hover:bg-brand-bg hover:text-brand-text"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="rounded-lg px-2 py-3 font-medium transition-colors hover:bg-brand-bg hover:text-brand-text"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="rounded-lg px-2 py-3 font-medium transition-colors hover:bg-brand-bg hover:text-brand-text"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="rounded-lg px-2 py-3 font-medium transition-colors hover:bg-brand-bg hover:text-brand-text"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="rounded-lg px-2 py-3 font-medium transition-colors hover:bg-brand-bg hover:text-brand-text"
+            >Contact</a
+          >
+          <div
+            class="mt-6 flex -translate-y-2 items-center justify-between gap-3 px-2 opacity-0 transition-all duration-200 ease-out"
+            data-mobile-nav-actions
+          >
+            <a
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-brand-accent bg-brand-accent px-4 py-2 text-center text-sm font-medium text-brand-accent-contrast shadow-sm hover:brightness-110"
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download size={20} />
+              Resume
+            </a>
+            <button
+              type="button"
+              data-theme-toggle
+              class="inline-flex items-center justify-end rounded-full border border-brand-panel-border bg-brand-panel px-1.5 py-1.5 text-sm font-medium text-brand-text shadow-sm"
+            >
+              <Sun size={20} data-theme-icon="sun" />
+              <Moon size={20} class="hidden" data-theme-icon="moon" />
+            </button>
+          </div>
+        </nav>
+      </div>
+    </aside>
+  </div>
 </header>
+
+<script>
+  const shell = document.querySelector<HTMLElement>("[data-mobile-nav-shell]");
+  const actions = document.querySelector<HTMLElement>(
+    "[data-mobile-nav-actions]",
+  );
+  const toggleButton = document.querySelector<HTMLButtonElement>(
+    "[data-mobile-nav-toggle]",
+  );
+  const overlay = document.querySelector<HTMLDivElement>(
+    "[data-mobile-nav-overlay]",
+  );
+  const panel = document.querySelector<HTMLElement>("[data-mobile-nav-panel]");
+  const openIcon = document.querySelector<HTMLElement>(
+    '[data-menu-icon="open"]',
+  );
+  const closeIcon = document.querySelector<HTMLElement>(
+    '[data-menu-icon="close"]',
+  );
+
+  const setMobileNavOpen = (isOpen: boolean) => {
+    if (!shell || !toggleButton || !overlay || !panel) return;
+
+    toggleButton.setAttribute("aria-expanded", String(isOpen));
+    shell.setAttribute("aria-hidden", String(!isOpen));
+    shell.classList.toggle("invisible", !isOpen);
+    shell.classList.toggle("pointer-events-none", !isOpen);
+    overlay.classList.toggle("opacity-0", !isOpen);
+    panel.classList.toggle("-translate-y-4", !isOpen);
+    panel.classList.toggle("opacity-0", !isOpen);
+    actions?.classList.toggle("opacity-0", !isOpen);
+    actions?.classList.toggle("-translate-y-2", !isOpen);
+    openIcon?.classList.toggle("opacity-0", isOpen);
+    openIcon?.classList.toggle("-rotate-90", isOpen);
+    closeIcon?.classList.toggle("opacity-0", !isOpen);
+    closeIcon?.classList.toggle("rotate-90", !isOpen);
+  };
+
+  toggleButton?.addEventListener("click", () => {
+    const isOpen = toggleButton.getAttribute("aria-expanded") === "true";
+    setMobileNavOpen(!isOpen);
+  });
+
+  overlay?.addEventListener("click", () => setMobileNavOpen(false));
+
+  panel?.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => setMobileNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileNavOpen(false);
+    }
+  });
+</script>

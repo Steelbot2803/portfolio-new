@@ -1,14 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
-  --color-bg: #f8fafc;
+  --color-bg: #f3f7fb;
   --color-surface: #ffffff;
-  --color-surface-border: #dbe4f0;
+  --color-surface-border: #cbd5e1;
   --color-text: #0f172a;
-  --color-muted: #475569;
-  --color-link: #1d4ed8;
+  --color-muted: #334155;
+  --color-link: #1e40af;
   --color-accent: #2563eb;
-  --color-accent-contrast: #eff6ff;
+  --color-accent-contrast: #f8fbff;
 }
 
 :root.dark {
@@ -31,4 +31,46 @@
   --color-brand-link: var(--color-link);
   --color-brand-accent: var(--color-accent);
   --color-brand-accent-contrast: var(--color-accent-contrast);
+}
+
+@layer base {
+  html {
+    background:
+      radial-gradient(
+        circle at top,
+        rgba(37, 99, 235, 0.08),
+        transparent 32rem
+      ),
+      var(--color-bg);
+  }
+
+  body {
+    background: transparent;
+  }
+
+  ::selection {
+    background: rgba(37, 99, 235, 0.18);
+    color: var(--color-text);
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22);
+  }
 }
