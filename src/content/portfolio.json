@@ -1,7 +1,7 @@
 {
   "seo": {
     "siteName": "Siddharth Kumar | Portfolio",
-    "defaultTitle": "Siddharth Kumar — Engineer",
+    "defaultTitle": "Siddharth Kumar - Engineer",
     "defaultDescription": "Portfolio featuring experience, projects, skills, and contact information for Siddharth Kumar.",
     "canonicalBase": "https://your-domain.com",
     "ogImage": "/og-cover.svg"
@@ -34,7 +34,7 @@
     {
       "company": "IPA Private Limited",
       "role": "Engineer",
-      "period": "Sep 2025 — Present",
+      "period": "Sep 2025 - Present",
       "bullets": [
         "Perform CAD and CAM work supporting critical part modeling, fixture design, DFM reviews, and CNC tool-path optimization.",
         "Act as the primary technical interface for manufacturing issues, design changes, and process improvements related to transducer systems.",
@@ -50,7 +50,7 @@
     {
       "company": "IPA Private Limited",
       "role": "Junior Engineer",
-      "period": "May 2025 — Sep 2025",
+      "period": "May 2025 - Sep 2025",
       "bullets": [
         "Collaborated with CAM specialists to redesign CNC toolpaths, reducing cycle time by 50% and increasing projected monthly output from 500 to 1,500 parts.",
         "Validated CNC programs directly on the shop floor, documenting setup sheets, tooling parameters, and machining conditions to ensure production readiness.",
@@ -63,7 +63,7 @@
     {
       "company": "IPA Private Limited",
       "role": "Engineering Intern",
-      "period": "Mar 2025 — Apr 2025",
+      "period": "Mar 2025 - Apr 2025",
       "bullets": [
         "Calibrated a Universal Testing Machine (UTM) using staged dead-weight loading to validate load cell performance across multiple load conditions.",
         "Identified load distribution discrepancies and proposed structural design modifications that improved calibration accuracy by 15%.",
@@ -72,8 +72,8 @@
     },
     {
       "company": "JerseySTEM",
-      "role": "Lead Curriculum Dev — Robotics",
-      "period": "May 2024 — Jan 2025",
+      "role": "Lead Curriculum Dev - Robotics",
+      "period": "May 2024 - Jan 2025",
       "bullets": [
         "Led the development of a comprehensive robotics curriculum for middle school students, covering topics from basic mechanics to advanced programming.",
         "Designed hands-on projects and activities using LEGO Robotics that engaged students in building and programming their own robots, fostering creativity and problem-solving skills."
@@ -82,7 +82,7 @@
     {
       "company": "Anemoi Technologies",
       "role": "Mechancial Design Engineer",
-      "period": "Jan 2019 — Jan 2020",
+      "period": "Jan 2019 - Jan 2020",
       "bullets": [
         "Designed and developed a package mounting system using SolidWorks and Fusion 360, achieving a 15% reduction in material usage and 25% increase in load capacity.",
         "Conducted FEA and structural analysis with ANSYS, improving prototype durability by 20%.",
@@ -92,16 +92,28 @@
   ],
   "projects": [
     {
+      "title": "Custom Numpad Design",
+      "description": "A custom-designed numpad with programmable keys, slider and knob, designed using Fusion 360 and kiCAD.",
+      "stack": ["Fusion 360", "kiCAD"],
+      "link": "https://github.com/Steelbot2803/numpad_pcb"
+    },
+    {
       "title": "Transducer Database",
       "description": "A custom built internal database designed and developed to track all loadcells that go through Transducer Dept.",
-      "stack": ["SvelteKit", "PostgreSQL"],
+      "stack": ["SvelteKit", "PostgreSQL", "Lucide", "Render"],
       "link": "https://github.com/Steelbot2803/IPA-Database"
     },
     {
       "title": "Water Level Automation",
-      "description": "A water level monitoring and control system with a robust app implemented at home.",
-      "stack": ["SvelteKit", "MQTT"],
+      "description": "A water level monitoring and control system with a robust app implemented at home. (WIP)",
+      "stack": ["SvelteKit", "MQTT", "Lucide", "Vercel"],
       "link": "https://github.com/Steelbot2803/water_level_automation"
+    },
+    {
+      "title": "Personal Portfolio",
+      "description": "This very website! Built from scratch using Astro, Lucide and hosted on Netlify.",
+      "stack": ["Astro", "Lucide", "Netlify"],
+      "link": "https://github.com/Steelbot2803/portfolio-new"
     }
   ],
   "skills": {

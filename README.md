@@ -2,11 +2,7 @@
 
 Public source for a personal portfolio site built with Astro, Tailwind CSS, and Netlify.
 
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/medium.svg)](https://astro.build)
-
-[![Icons by Lucide](https://img.shields.io/badge/Icons-LUCIDE-18181B?style=for-the-badge&labelColor=18181B&color=334155)](https://lucide.dev)
-
-[![Deploys by Netlify](https://www.netlify.com/assets/badges/netlify-badge-color-accent.svg)](https://www.netlify.com)
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/medium.svg)](https://astro.build) [![Icons by Lucide](https://img.shields.io/badge/Icons-LUCIDE-18181B?style=for-the-badge&labelColor=18181B&color=334155)](https://lucide.dev) [![Deploys by Netlify](https://www.netlify.com/assets/badges/netlify-badge-color-accent.svg)](https://www.netlify.com) [![Assisted by OpenAI Codex](https://img.shields.io/badge/Assisted%20by-OpenAI%20Codex-0F172A?style=for-the-badge&labelColor=111827&color=10A37F)](https://openai.com/codex/)
 
 ## Stack
 
