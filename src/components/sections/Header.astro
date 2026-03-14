@@ -1,5 +1,6 @@
 ---
-import { Download, Menu, Moon, Sun, X } from "@lucide/astro";
+import { Download, Menu, Moon, Sun, X } from "lucide";
+import LucideIcon from "../ui/LucideIcon.astro";
 
 interface Props {
   name: string;
@@ -25,13 +26,13 @@ const { name, resumeUrl } = Astro.props;
       aria-controls="mobileNavPanel"
       class="relative inline-flex size-10 items-center justify-end rounded-full text-sm font-medium text-brand-text transition-colors hover:bg-brand-bg/70 md:hidden"
     >
-      <Menu
-        size={20}
+      <LucideIcon
+        icon={Menu}
         class="absolute transition-all duration-200 ease-out"
         data-menu-icon="open"
       />
-      <X
-        size={20}
+      <LucideIcon
+        icon={X}
         class="absolute rotate-90 opacity-0 transition-all duration-200 ease-out"
         data-menu-icon="close"
       />
@@ -53,8 +54,8 @@ const { name, resumeUrl } = Astro.props;
         data-theme-toggle
         class="inline-flex items-center gap-2 rounded-full border border-brand-panel-border bg-brand-panel px-1.5 py-1.5 font-medium text-brand-text shadow-sm hover:border-brand-link/35 hover:bg-brand-bg"
       >
-        <Sun size={20} data-theme-icon="sun" />
-        <Moon size={20} class="hidden" data-theme-icon="moon" />
+        <LucideIcon icon={Sun} data-theme-icon="sun" />
+        <LucideIcon icon={Moon} class="hidden" data-theme-icon="moon" />
       </button>
 
       <a
@@ -63,7 +64,7 @@ const { name, resumeUrl } = Astro.props;
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Download size={20} />
+        <LucideIcon icon={Download} />
         Resume
       </a>
     </nav>
@@ -126,7 +127,7 @@ const { name, resumeUrl } = Astro.props;
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Download size={20} />
+              <LucideIcon icon={Download} />
               Resume
             </a>
             <button
@@ -134,8 +135,8 @@ const { name, resumeUrl } = Astro.props;
               data-theme-toggle
               class="inline-flex items-center justify-end rounded-full border border-brand-panel-border bg-brand-panel px-1.5 py-1.5 text-sm font-medium text-brand-text shadow-sm"
             >
-              <Sun size={20} data-theme-icon="sun" />
-              <Moon size={20} class="hidden" data-theme-icon="moon" />
+              <LucideIcon icon={Sun} data-theme-icon="sun" />
+              <LucideIcon icon={Moon} class="hidden" data-theme-icon="moon" />
             </button>
           </div>
         </nav>

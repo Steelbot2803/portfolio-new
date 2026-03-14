@@ -1,5 +1,6 @@
 ---
-import { ArrowRight, Github, Linkedin, MapPin } from "@lucide/astro";
+import { ArrowRight, Github, Linkedin, MapPin } from "lucide";
+import LucideIcon from "../ui/LucideIcon.astro";
 
 interface Props {
   profile: {
@@ -21,7 +22,7 @@ const { profile, stats } = Astro.props;
   <p
     class="inline-flex items-center gap-2 rounded-full border border-brand-panel-border/80 bg-brand-panel/75 px-3 py-1 text-sm font-medium text-brand-muted shadow-sm"
   >
-    <MapPin size={20} />
+    <LucideIcon icon={MapPin} />
     {profile.location}
   </p>
   <h1
@@ -43,7 +44,7 @@ const { profile, stats } = Astro.props;
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Linkedin size={20} />
+      <LucideIcon icon={Linkedin} />
       LinkedIn
     </a>
     <a
@@ -52,14 +53,14 @@ const { profile, stats } = Astro.props;
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Github size={20} />
+      <LucideIcon icon={Github} />
       GitHub
     </a>
     <a
       class="inline-flex items-center gap-2 rounded-full border border-brand-accent bg-brand-accent px-4 py-2 text-sm font-medium text-brand-accent-contrast shadow-sm hover:brightness-110"
       href="#contact"
     >
-      <ArrowRight size={20} />
+      <LucideIcon icon={ArrowRight} />
       Get Back to Me
     </a>
   </div>

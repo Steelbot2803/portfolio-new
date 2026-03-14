@@ -1,0 +1,48 @@
+---
+type IconNode = [tag: string, attrs: Record<string, string | number | undefined>][];
+
+interface Props {
+  icon: IconNode;
+  size?: number | string;
+  strokeWidth?: number | string;
+  class?: string;
+  title?: string;
+  [key: string]: unknown;
+}
+
+const {
+  icon,
+  size = 20,
+  strokeWidth = 2,
+  class: className = "",
+  title,
+  ...rest
+} = Astro.props;
+
+const renderAttrs = (attrs: Record<string, string | number | undefined>) =>
+  Object.entries(attrs)
+    .filter(([, value]) => value !== undefined)
+    .map(([key, value]) => `${key}="${String(value)}"`)
+    .join(" ");
+
+const innerSvg = icon
+  .map(([tag, attrs]) => `<${tag} ${renderAttrs(attrs)}></${tag}>`)
+  .join("");
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={strokeWidth}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden={title ? undefined : "true"}
+  role={title ? "img" : undefined}
+  {...rest}
+  set:html={title ? `<title>${title}</title>${innerSvg}` : innerSvg}
+/>

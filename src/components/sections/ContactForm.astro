@@ -1,5 +1,6 @@
 ---
-import { Clock3, Mail, MessageSquare, Phone, Send, User } from "@lucide/astro";
+import { Clock3, Mail, MessageSquare, Phone, Send, User } from "lucide";
+import LucideIcon from "../ui/LucideIcon.astro";
 
 interface Props {
   heading: string;
@@ -29,7 +30,7 @@ const { heading, description, privacyNote } = Astro.props;
 
     <label class="grid gap-1 text-sm text-brand-text/90">
       <span class="inline-flex items-center gap-2">
-        <User size={20} />
+        <LucideIcon icon={User} />
         Full Name*
       </span>
       <input
@@ -41,7 +42,7 @@ const { heading, description, privacyNote } = Astro.props;
 
     <label class="grid gap-1 text-sm text-brand-text/90">
       <span class="inline-flex items-center gap-2">
-        <Mail size={20} />
+        <LucideIcon icon={Mail} />
         Email*
       </span>
       <input
@@ -54,18 +55,19 @@ const { heading, description, privacyNote } = Astro.props;
 
     <label class="grid gap-1 text-sm text-brand-text/90">
       <span class="inline-flex items-center gap-2">
-        <Phone size={20} />
+        <LucideIcon icon={Phone} />
         Phone
       </span>
       <input
         name="phone"
+        type="tel"
         class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
       />
     </label>
 
     <label class="grid gap-1 text-sm text-brand-text/90">
       <span class="inline-flex items-center gap-2">
-        <Clock3 size={20} />
+        <LucideIcon icon={Clock3} />
         Preferred callback window
       </span>
       <input
@@ -77,7 +79,7 @@ const { heading, description, privacyNote } = Astro.props;
 
     <label class="grid gap-1 text-sm text-brand-text/90">
       <span class="inline-flex items-center gap-2">
-        <MessageSquare size={20} />
+        <LucideIcon icon={MessageSquare} />
         Message*
       </span>
       <textarea
@@ -92,7 +94,7 @@ const { heading, description, privacyNote } = Astro.props;
       type="submit"
       class="mt-2 inline-flex w-fit items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-brand-accent-contrast shadow-sm hover:brightness-110"
     >
-      <Send size={20} />
+      <LucideIcon icon={Send} />
       Send Details
     </button>
     <p
