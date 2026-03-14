@@ -16,7 +16,7 @@
     "phone": "+91 93533 68952",
     "linkedin": "https://www.linkedin.com/in/sidkak",
     "github": "https://github.com/Steelbot2803",
-    "resumeUrl": "../src/components/files/resume.pdf"
+    "resumeUrl": "/resume.pdf"
   },
   "stats": [
     { "label": "Years of Experience", "value": "3+" },
