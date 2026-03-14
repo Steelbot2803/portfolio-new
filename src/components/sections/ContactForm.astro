@@ -17,9 +17,14 @@ const { heading, description, privacyNote } = Astro.props;
   </h3>
   <p class="mt-3 max-w-3xl leading-7 text-brand-muted">{description}</p>
   <form
+    name="contactForm"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="company"
     id="contactForm"
     class="mt-6 grid max-w-2xl gap-3 rounded-2xl border border-brand-panel-border bg-brand-panel/90 p-5 shadow-sm"
   >
+    <input type="hidden" name="form-name" value="contactForm" />
     <input
       name="company"
       autocomplete="off"
@@ -61,6 +66,7 @@ const { heading, description, privacyNote } = Astro.props;
       <input
         name="phone"
         type="tel"
+        placeholder="Please include country code"
         class="rounded-lg border border-brand-panel-border bg-brand-panel px-3 py-2 text-brand-text placeholder:text-brand-muted/80 focus:border-brand-link"
       />
     </label>
@@ -110,6 +116,13 @@ const { heading, description, privacyNote } = Astro.props;
 <script>
   const form = document.querySelector<HTMLFormElement>("#contactForm");
   const status = document.querySelector<HTMLParagraphElement>("#contactStatus");
+  const encodeForm = (formData: FormData) =>
+    new URLSearchParams(
+      Array.from(formData.entries()).map(([key, value]) => [
+        key,
+        String(value),
+      ]),
+    ).toString();
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -123,10 +136,10 @@ const { heading, description, privacyNote } = Astro.props;
 
     try {
       if (status) status.textContent = "Sending...";
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeForm(formData),
       });
 
       if (!response.ok) {
