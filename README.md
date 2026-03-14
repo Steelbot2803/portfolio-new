@@ -1,87 +1,92 @@
-# Portfolio Website (Astro)
+# Siddharth Kumar Portfolio
 
-This project is a portfolio site with:
+Public source for a personal portfolio site built with Astro, Tailwind CSS, and Netlify.
 
-- Tailwind CSS utility-first styling for fast visual iteration.
-- Dark/light mode toggle with system preference + localStorage persistence.
-- Structured resume-style sections (hero, about, experience, projects, skills).
-- A public read-only experience for visitors.
-- Owner-only content editing through Decap CMS (`/admin`).
-- A contact form endpoint with validation, honeypot, and in-memory rate limiting.
+## Stack
 
-## 1) Run locally
+- Astro 6
+- Tailwind CSS 4
+- Lucide icons
+- Netlify deployment
+- Netlify Forms for contact submissions
 
-```sh
+## Features
+
+- Responsive portfolio layout
+- Light and dark theme toggle
+- Mobile dropdown navigation
+- Resume download from a static public asset
+- Content-driven sections powered by `src/content/portfolio.json`
+- Netlify-ready contact form
+
+## Project Structure
+
+```text
+src/
+  components/
+    sections/
+    ui/
+  content/
+    portfolio.json
+  layouts/
+  pages/
+public/
+  admin/
+  resume.pdf
+```
+
+## Local Development
+
+```bash
 npm install
 npm run dev
 ```
 
-## 2) Update your portfolio content quickly
+## Build
 
-All portfolio text and section data live in:
+```bash
+npm run build
+```
+
+## Content Updates
+
+Most editable portfolio content lives in:
 
 - `src/content/portfolio.json`
 
-You can edit this file directly, or use the admin UI:
+That includes:
 
-- `http://localhost:4321/admin`
+- profile details
+- section copy
+- experience
+- projects
+- skills
+- public resume URL
 
-### Decap CMS setup (owner-only edits)
+## Netlify Deployment
 
-This repo includes Decap CMS config in `public/admin/config.yml`.
+This project is configured for Netlify via the Astro Netlify adapter.
 
-To enforce owner-only editing in production:
+Typical deploy flow:
 
-1. Deploy on Netlify.
-2. Enable **Netlify Identity** and **Git Gateway**.
-3. Disable open signup and invite only your own account.
-4. Keep visitors on the public site only; only authenticated users can access editing and commit changes.
-5. Protect `main` branch via repository settings.
+1. Push the repository to GitHub.
+2. Import the repo into Netlify.
+3. Let Netlify run the default build command:
 
-## 3) Contact form behavior
-
-The form posts to:
-
-- `src/pages/api/contact.ts`
-
-Features:
-
-- Required field validation (`name`, `email`, `phone`, `message`).
-- Email format validation.
-- Honeypot (`company`) anti-spam field.
-- Basic per-IP rate limit (6 requests / minute in-memory).
-
-### Sending submissions to your inbox/CRM
-
-Set this environment variable in deployment:
-
-```sh
-CONTACT_WEBHOOK_URL=https://your-webhook-endpoint
+```bash
+npm run build
 ```
 
-The endpoint will forward sanitized submission payloads to your webhook.
+## Contact Form
 
-## 4) Resume and profile links
+The contact form is configured for Netlify Forms.
 
-Update these in `src/content/portfolio.json`:
+To verify it in production:
 
-- `profile.linkedin`
-- `profile.github`
-- `profile.resumeUrl`
+1. Deploy the site to Netlify.
+2. Submit the form once on the deployed site.
+3. Check the Netlify dashboard under Forms.
 
-## 5) SEO & social metadata
+## License
 
-`src/layouts/Layout.astro` includes:
-
-- Meta description
-- Canonical URL
-- Open Graph tags
-- Twitter summary tags
-
-Update defaults in `src/content/portfolio.json` under `seo`.
-
-## 6) Theme mode
-
-- Use the header toggle to switch between dark and light themes.
-- By default, the site follows the system theme preference.
-- After the user toggles the theme, that explicit choice is saved in `localStorage` and used on future visits.
+This repository is licensed under the MIT License. See [LICENSE](./LICENSE).
