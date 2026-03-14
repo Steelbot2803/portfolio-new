@@ -115,5 +115,35 @@ const canonicalUrl = new URL("/", siteContent.seo.canonicalBase).toString();
       description={siteContent.contact.description}
       privacyNote={siteContent.contact.privacyNote}
     />
+    <div
+      class="mb-12 flex items-center justify-between px-12 border-t-2 border-brand-panel-border text-sm text-brand-muted"
+    >
+      <div>
+        <p>Licensed under the MIT License.</p>
+        <p>Copyright © {new Date().getFullYear()} Sid. All rights reserved.</p>
+      </div>
+      <div class="inline-flex items-center justify-end gap-6 p-4">
+        <a href="https://astro.build"
+          ><img
+            src="https://astro.badg.es/v2/built-with-astro/medium.svg"
+            alt="Built with Astro"
+            width="240"
+            height="40"
+          /></a
+        >
+        <a href="https://lucide.dev">
+          <img
+            src="https://img.shields.io/badge/Icons-LUCIDE-18181B?style=for-the-badge&labelColor=18181B&color=334155"
+            alt="Icons by Lucide"
+          />
+        </a>
+        <a href="https://www.netlify.com">
+          <img
+            src="https://www.netlify.com/assets/badges/netlify-badge-color-accent.svg"
+            alt="Deploys by Netlify"
+          />
+        </a>
+      </div>
+    </div>
   </main>
 </Layout>
