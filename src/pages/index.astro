@@ -70,7 +70,18 @@ const canonicalUrl = new URL("/", siteContent.seo.canonicalBase).toString();
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View project
+                {project.link ? "View Project" : ""}
+              </a>
+              <p class="mt-3 inline-block text-sm font-semibold text-brand-link hover:brightness-110">
+                {project.autoCADPDF && project.link ? " | " : ""}
+              </p>
+              <a
+                class="mt-3 inline-block text-sm font-semibold text-brand-link hover:brightness-110"
+                href={project.autoCADPDF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.autoCADPDF ? "View AutoCAD PDF" : ""}
               </a>
             </article>
           ))
@@ -151,9 +162,7 @@ const canonicalUrl = new URL("/", siteContent.seo.canonicalBase).toString();
             alt="Deploys by Netlify"
           />
         </a>
-        <a
-          href="https://openai.com/codex/"
-        >
+        <a href="https://openai.com/codex/">
           <img
             src="https://img.shields.io/badge/Assisted%20by-OpenAI%20Codex-0F172A?style=for-the-badge&labelColor=111827&color=10A37F"
             alt="Assisted by OpenAI Codex"

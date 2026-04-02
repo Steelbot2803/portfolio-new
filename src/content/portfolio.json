@@ -3,7 +3,7 @@
     "siteName": "Siddharth Kumar | Portfolio",
     "defaultTitle": "Siddharth Kumar - Engineer",
     "defaultDescription": "Portfolio featuring experience, projects, skills, and contact information for Siddharth Kumar.",
-    "canonicalBase": "https://your-domain.com",
+    "canonicalBase": "https://water-level-automation.netlify.app/",
     "ogImage": "/og-cover.svg"
   },
   "profile": {
@@ -16,7 +16,7 @@
     "phone": "+91 93533 68952",
     "linkedin": "https://www.linkedin.com/in/sidkak",
     "github": "https://github.com/Steelbot2803",
-    "resumeUrl": "/resume.pdf"
+    "resumeUrl": "/files/resume.pdf"
   },
   "stats": [
     { "label": "Years of Experience", "value": "3+" },
@@ -94,8 +94,24 @@
     {
       "title": "Custom Numpad Design",
       "description": "A custom-designed numpad with programmable keys, slider and knob, designed using Fusion 360 and kiCAD.",
-      "stack": ["Fusion 360", "kiCAD"],
-      "link": "https://github.com/Steelbot2803/numpad_pcb"
+      "stack": ["Fusion 360", "AutoCAD", "kiCAD"],
+      "link": "https://github.com/Steelbot2803/numpad_pcb",
+      "autoCADFile": "/files/Numpad_Casing.dwg",
+      "autoCADPDF": "/files/Numpad_Casing.pdf"
+    },
+    {
+      "title": "Temple Umbrella",
+      "description": "A custom designed umbrella for a temple in Bengaluru, designed using Fusion 360 and AutoCAD.",
+      "stack": ["Fusion 360", "AutoCAD"],
+      "autoCADFile": "/files/Temple_Umbrella.dwg",
+      "autoCADPDF": "/files/Temple_Umbrella.pdf"
+    },
+    {
+      "title": "McPhearson Suspension System",
+      "description": "A basic design of a McPhearson suspension system for an electromagnetic energy harvester, designed using Fusion 360 and AutoCAD.",
+      "stack": ["Fusion 360", "AutoCAD"],
+      "autoCADFile": "/files/McPhearson_Suspension.dwg",
+      "autoCADPDF": "/files/McPhearson_Suspension.pdf"
     },
     {
       "title": "Transducer Database",
